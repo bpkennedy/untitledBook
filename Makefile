@@ -1,4 +1,4 @@
-BUILD = build
+BUILD = dist
 BOOKNAME = my-book
 TITLE = title.txt
 METADATA = metadata.xml
