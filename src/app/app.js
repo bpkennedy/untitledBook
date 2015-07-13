@@ -15,7 +15,7 @@ service('githubHistoryService', function($http) {
   var commitData = "";
 
   var getGithubData = function() {
-    $http.get('https://api.github.com/repos/bpkennedy/untitledBook/commits&responseFormat=JSON').
+    $http.get('https://api.github.com/repos/bpkennedy/untitledBook/commits').
       success(function (data, status, headers, config) {
         commitData = data;
         console.log(commitData);
