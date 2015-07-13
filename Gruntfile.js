@@ -42,9 +42,15 @@ module.exports = function(grunt) {
               files: [
                   {
                       cwd: sourceDir,
-                      src: ['**', '!**/epubResources/**', '!**/chapters/**'],
+                      src: ['!**/epubResources/**', '!**/chapters/**'],
                       dest: outputDir,
                       expand: true
+                  },
+                  {
+                    cwd: sourceDir + '/app/',
+                    src: ['**/*'],
+                    dest: outputDir,
+                    expand: true
                   }
               ]
           },
