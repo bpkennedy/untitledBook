@@ -9,8 +9,9 @@ angular.module('myApp', [
 ]).
 config(['$routeProvider', function($routeProvider) {
   $routeProvider.otherwise({redirectTo: '/view1'});
-}]).
-service('githubHistoryService', function($http) {
+}]);
+
+myApp.service('githubHistoryService', function($http) {
 
   var commitData = "";
 
