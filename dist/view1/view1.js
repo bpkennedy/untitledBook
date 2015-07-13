@@ -9,6 +9,13 @@ angular.module('myApp.view1', ['ngRoute'])
   });
 }])
 
-.controller('View1Ctrl', [function() {
+.controller('View1Ctrl', [function(githubHistoryService) {
 
+  $scope.gitData = "";
+
+  var init = function() {
+    $scope.gitData = githubHistoryService.getGithubData();
+    console.log("scope data is " + $scope.gitData);
+  };
+  init();
 }]);
