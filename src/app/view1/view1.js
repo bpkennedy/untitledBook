@@ -9,7 +9,7 @@ angular.module('myApp.view1', ['ngRoute'])
   });
 }])
 
-.controller('View1Ctrl', [function(githubHistoryService) {
+.controller('View1Ctrl', [function($scope, githubHistoryService) {
 
   $scope.gitData = "";
 
