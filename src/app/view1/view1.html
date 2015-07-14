@@ -7,7 +7,7 @@ This is view 1 </br>
   <ul>
     <li ng-repeat="commit in gitData">
       <div class="message">{{commit.commit.message}}</div>
-      <div class="date">{{commit.author.date | amCalendar }}</div>
+      <div class="date">{{commit.author.date }}</div>
     </li>
   </ul>
 </div>

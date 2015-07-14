@@ -10,10 +10,8 @@ angular.module('myApp.view1', ['ngRoute'])
 }])
 
 .controller('View1Ctrl', ['$scope', 'githubHistoryService', function($scope, githubHistoryService) {
-
   $scope.gitData = "";
   githubHistoryService.getGithubData().success(function(commits) {
     $scope.gitData = commits;
   });
-  console.log("scope data is " + $scope.gitData);
 }]);
