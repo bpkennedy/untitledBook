@@ -2,3 +2,12 @@ This is view 1 </br>
 <div id="1337book">
   <ng-include src="'ch01.html'"></ng-include>
 </div>
+<div class="githubCommits">
+  <div class="ghHeader">Recent Updates</div>
+  <ul>
+    <li ng-repeat="commit in gitData">
+      <div class="message">{{commit.commit.message}}</div>
+      <div class="date">{{commit.author.date | date:'MMMM dd, yyyy'}}</div>
+    </li>
+  </ul>
+</div>
