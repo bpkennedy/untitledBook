@@ -14,7 +14,9 @@ angular.module('myApp.view1', ['ngRoute'])
   $scope.gitData = "";
 
   var init = function() {
-    $scope.gitData = githubHistoryService.getGithubData();
+    githubHistoryService.getGithubData().success(function(commits) {
+      $scope.gitData = commits;
+    });
     console.log("scope data is " + $scope.gitData);
   };
   init();
