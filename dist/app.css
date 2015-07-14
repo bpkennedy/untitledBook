@@ -36,21 +36,12 @@ body {
   padding: 45px;
   vertical-align: top;
   width: 65%;
-  @media screen and (max-width:455px) {
-    width:100%;
-    display:block;
-    padding:10px;
-  }
 }
 
 .githubCommits {
     display: inline-block;
     width: 24%;
     margin-top:15px;
-    @media screen and (max-width:455px) {
-      width:100%;
-      display: block;
-    }
 }
 .fa-bolt {
     left: 10px;
@@ -80,4 +71,16 @@ body {
 }
 .message {
   font-size:0.9em;
+}
+
+@media screen and (max-width:455px) {
+  #leetbook {
+    width:100%;
+    display:block;
+    padding:10px;
+  }
+  .githubCommits {
+    width:100%;
+    display: block;
+  }
 }
