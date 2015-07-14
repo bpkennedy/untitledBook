@@ -1,11 +1,14 @@
 /* app css stylesheet */
 html, body {
   font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+  background-color:#fafafa;
 }
 .menu {
-  height:40px;
-  margin:0;
-  padding:0;
+  background-color: #999;
+  color: #fafafa;
+  height: 40px;
+  margin: 0;
+  padding: 0;
 }
 .menu > li {
   display:inline;
@@ -20,7 +23,7 @@ html, body {
 }
 
 .firstLink {
-  margin-left:20px;
+  margin-left:35px;
 }
 
 body {
@@ -29,12 +32,52 @@ body {
 }
 
 #leetbook {
-    display: inline-block;
-    vertical-align: top;
-    width: 75%;
+  display: inline-block;
+  padding: 45px;
+  vertical-align: top;
+  width: 65%;
+  @media screen and (max-width:455px) {
+    width:100%;
+    display:block;
+    padding:10px;
+  }
 }
 
 .githubCommits {
     display: inline-block;
     width: 24%;
+    margin-top:15px;
+    @media screen and (max-width:455px) {
+      width:100%;
+      display: block;
+    }
+}
+.fa-bolt {
+    left: 10px;
+    position: absolute;
+    top: 3px;
+}
+.ghHeader {
+    font-weight: bold;
+    text-align: center;
+    font-size:1.3em;
+}
+.githubCommits > ul {
+    list-style:none;
+    margin: 15px 0 0;
+    padding: 0;
+}
+.githubCommits ul li {
+    border: 1px solid #ddd;
+    margin-bottom: 5px;
+    padding: 5px;
+    background-color:#ffffff;
+}
+.date {
+    font-size: 0.8em;
+    padding: 5px;
+    text-align: right;
+}
+.message {
+  font-size:0.9em;
 }
