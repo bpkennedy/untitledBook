@@ -21,8 +21,8 @@ module.exports = function(grunt) {
           },
           files: {
             "chapters": [
-              "src/chapters/ch01.md", // Require Header File.
-              //"chapters/content.md" // Chapter Files.
+              "src/chapters/ch01.md",
+              "src/chapters/ch02.md" // Chapter Files.
             ]
           }
         },
