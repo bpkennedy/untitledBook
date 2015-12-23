@@ -1,9 +1,0 @@
-<metadata xmlns:dc="http://purl.org/dc/elements/1.1/">
-  <dc:title id="#t1">Awesome Book</dc:title>
-  <meta refines="#t1" property="title-type">main</meta>
-  <dc:language>en-US</dc:language>
-  <dc:creator opf:file-as="Kennedy, Brian" opf:role="aut">Brian Kennedy</dc:creator>
-  <dc:publisher>Home Fry Publishing</dc:publisher>
-  <dc:date opf:event="publication">2013-11-07</dc:date>
-  <dc:rights>Copyright ©2013 by Brian Kennedy</dc:rights>
-</metadata>
