@@ -43,7 +43,7 @@ git push origin master
 
 In that example I am pushing directly to master, but you can (and should) create branches and merge those branches into master.  Lastly, let's run the command to actually publish to our gh-pages branch in the repo:
 ```
-grunt publishBook
+grunt publish
 ```
 
 The [book webspace](http://bpkennedy.github.io/untitledBook/) should take a minute or two to update with the new content.
