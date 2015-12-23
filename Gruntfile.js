@@ -6,73 +6,79 @@ module.exports = function(grunt) {
     require('load-grunt-tasks')(grunt);
 
     var sourceDir = 'src',
-        outputDir = 'dist',
-        depDir = 'node_modules';
+    outputDir = 'dist',
+    depDir = 'node_modules';
 
     grunt.initConfig({
-      pandoc: {
-        TestBook: { // OUTPUT file name
-          configs: {
-            "publish"   : 'EPUB',                 // Publish File Format.
-            "title"     : "TestBook",        // EPUB Title
-            "metadata"  : "src/epubResources/metadata.xml", // EPUB include META data File Path.
-            "stylesheet": "src/epubResources/styles/bookStyles.css",     // EPUB include StyleSheet File Path.
-            "coverImage" : "src/epubResources/images/cover.jpg"
-          },
-          files: {
-            "chapters": [
-              "src/chapters/ch01.md",
-              "src/chapters/ch02.md" // Chapter Files.
-            ]
-          }
+        pandoc: {
+            TestBook: { // OUTPUT file name
+                configs: {
+                    "publish"   : 'EPUB',                 // Publish File Format.
+                    "title"     : "TestBook",        // EPUB Title
+                    "metadata"  : "src/epubResources/metadata.xml", // EPUB include META data File Path.
+                    "stylesheet": "src/epubResources/styles/bookStyles.css",     // EPUB include StyleSheet File Path.
+                    "coverImage" : "src/epubResources/images/cover.jpg"
+                },
+                files: {
+                    "chapters": [
+                        "src/chapters/ch01.md",
+                        "src/chapters/ch02.md" // Chapter Files.
+                    ]
+                }
+            },
+            TestBookHTML: {
+                configs: {
+                    "publish"   : 'HTML'       // Publish File Format.
+                },
+                files: {
+                    "from": [
+                        "src/chapters/ch01.md",
+                    ]
+                }
+            }
         },
-        TestBookHTML: {
-          configs: {
-            "publish"   : 'HTML'       // Publish File Format.
-          },
-          files: {
-            "from": [
-              "src/chapters/ch01.md",
-            ]
-          }
-        }
-      },
-      copy: {
-          'src': {
-              files: [
-                  {
-                      cwd: sourceDir,
-                      src: ['!**/epubResources/**', '!**/chapters/**'],
-                      dest: outputDir,
-                      expand: true
-                  },
-                  {
-                    cwd: sourceDir + '/app/',
-                    src: ['**/*'],
-                    dest: outputDir,
-                    expand: true
-                  }
-              ]
-          },
-          'epubBook': {
-            files: [
-              {
-                src: ['./*.epub'],
-                dest: outputDir,
-                expand: true
-              }
-            ]
-          },
-          'htmlBook': {
-            files: [
-              {
-                flatten: true,
-                src: ['./src/chapters/*.html'],
-                dest: outputDir,
-                expand: true
-              }
-            ]
-          }
+        copy: {
+            'src': {
+                files: [
+                    {
+                        cwd: sourceDir,
+                        src: ['!**/epubResources/**', '!**/chapters/**'],
+                        dest: outputDir,
+                        expand: true
+                    },
+                    {
+                        cwd: sourceDir + '/app/',
+                        src: ['**/*'],
+                        dest: outputDir,
+                        expand: true
+                    }
+                ]
+            },
+            'epubBook': {
+                files: [
+                    {
+                        src: ['./*.epub'],
+                        dest: outputDir,
+                        expand: true
+                    }
+                ]
+            },
+            'htmlBook': {
+                files: [
+                    {
+                        flatten: true,
+                        src: ['./src/chapters/*.html'],
+                        dest: outputDir,
+                        expand: true
+                    }
+                ]
+            },
+            'reqs': {
+                files: [
+                    { src:"node_modules/angular-moment/angular-moment.min.js", dest:"dist/components/angular-moment.min.js" },
+                    { src:"node_modules/moment/min/moment.min.js", dest:"dist/components/moment.min.js" }
+                ]
+            }
         },
         shell: {
             buildBook: {
