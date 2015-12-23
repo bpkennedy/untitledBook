@@ -74,12 +74,17 @@ module.exports = function(grunt) {
             ]
           }
         },
+        shell: {
+            buildBook: {
+                command: 'pandoc src/chapters/*.md > src/chapters/book.html'
+            }
+        },
         clean: ['TestBook.epub', 'src/chapters/*.html']
     });
 
     grunt.loadNpmTasks('grunt-contrib-copy', 'grunt-pandoc', 'grunt-contrib-clean');
     grunt.registerTask(
         'compile',
-        ['pandoc', 'copy', 'clean']
+        ['shell:buildBook', 'pandoc', 'copy', 'clean']
     );
 };
