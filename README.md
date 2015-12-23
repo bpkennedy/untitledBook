@@ -6,6 +6,18 @@ Additionally, this project is using the pandoc extension to convert the markdown
 
 I also have published the novel to github webspace and setup my build process to push via terminal command.  I might automate this with Travis in the future, but manual suits me just fine for now.  The goal with this step is to quickly publish to the interwebs for a group project/effort or immediate reading/feedback from interested people.
 
+# setup
+
+```
+git clone https://github.com/bpkennedy/untitledBook.git
+cd untitledBook
+npm install
+//create new files and/or make changes
+grunt compile
+//save your changes and commit to master
+grunt publish
+```
+
 # The workflow
 
 It's pretty simple.  Say you're writing a book with chapters.  Create a structure of loose files in your ```src/chapters``` directory like so:
