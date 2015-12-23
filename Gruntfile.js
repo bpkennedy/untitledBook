@@ -10,33 +10,6 @@ module.exports = function(grunt) {
     depDir = 'node_modules';
 
     grunt.initConfig({
-        pandoc: {
-            TestBook: { // OUTPUT file name
-                configs: {
-                    "publish"   : 'EPUB',                 // Publish File Format.
-                    "title"     : "TestBook",        // EPUB Title
-                    "metadata"  : "src/epubResources/metadata.xml", // EPUB include META data File Path.
-                    "stylesheet": "src/epubResources/styles/bookStyles.css",     // EPUB include StyleSheet File Path.
-                    "coverImage" : "src/epubResources/images/cover.jpg"
-                },
-                files: {
-                    "chapters": [
-                        "src/chapters/ch01.md",
-                        "src/chapters/ch02.md" // Chapter Files.
-                    ]
-                }
-            },
-            TestBookHTML: {
-                configs: {
-                    "publish"   : 'HTML'       // Publish File Format.
-                },
-                files: {
-                    "from": [
-                        "src/chapters/ch01.md",
-                    ]
-                }
-            }
-        },
         copy: {
             'src': {
                 files: [
@@ -81,9 +54,13 @@ module.exports = function(grunt) {
             }
         },
         shell: {
-            buildBook: {
+            buildHtmlBook: {
                 //this converts all markdown files in src/chapters to a single book.html file
+                //using the pandoc utility for conversion
                 command: 'pandoc src/chapters/*.md > src/chapters/book.html'
+            },
+            buildEpubBook: {
+                command: 'pandoc -S -o TestBook.epub --epub-metadata=src/epubResources/metadata.xml --epub-stylesheet=src/epubResources/styles/bookStyles.css src/chapters/*.md'
             },
             publishBook: {
                 //this pushes to the master subtree and publishes out to the gh-pages branch
@@ -93,10 +70,10 @@ module.exports = function(grunt) {
         clean: ['TestBook.epub', 'src/chapters/*.html']
     });
 
-    grunt.loadNpmTasks('grunt-contrib-copy', 'grunt-pandoc', 'grunt-contrib-clean');
+    grunt.loadNpmTasks('grunt-contrib-copy', 'grunt-contrib-clean');
     grunt.registerTask(
         'compile',
-        ['shell:buildBook', 'pandoc', 'copy', 'clean']
+        ['shell:buildHtmlBook', 'shell:buildEpubBook', 'copy', 'clean']
     );
     grunt.registerTask(
         'publish',

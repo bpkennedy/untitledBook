@@ -2,7 +2,7 @@
 
 This project aims to make an easy way to publish fiction in a modular way.   The goal is a writing style that can be published as fast as possible and also with all the advantages of source code control.  A second goal is to explore the writing process as a more modular activity, much like programming.  Would it be possible for many authors to quickly collaborate on writing stories without a lot of admin tasks or confusion?  I hope something like this can be a solution.
 
-Additionally, this project is using the pandoc extension to convert the markdown syntax into both html, .epub, and at some point .mobi formats as a one-size-fits-all publishing.
+Additionally, this project is using the [pandoc](http://pandoc.org/) extension to convert the markdown syntax into both html, .epub, and at some point .mobi formats as a one-size-fits-all publishing.  You will need to [install it](http://pandoc.org/installing.html) on your local machine.
 
 I also have published the novel to github webspace and setup my build process to push via terminal command.  I might automate this with Travis in the future, but manual suits me just fine for now.  The goal with this step is to quickly publish to the interwebs for a group project/effort or immediate reading/feedback from interested people.
 

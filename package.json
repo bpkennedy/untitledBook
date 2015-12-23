@@ -24,7 +24,6 @@
     "grunt-contrib-copy": "^0.8.0",
     "grunt-contrib-less": "^1.0.1",
     "grunt-contrib-watch": "^0.6.1",
-    "grunt-pandoc": "^0.2.3",
     "grunt-remove": "^0.1.0",
     "grunt-shell": "^1.1.2",
     "jit-grunt": "^0.9.1",
