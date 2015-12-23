@@ -76,7 +76,12 @@ module.exports = function(grunt) {
         },
         shell: {
             buildBook: {
+                //this converts all markdown files in src/chapters to a single book.html file
                 command: 'pandoc src/chapters/*.md > src/chapters/book.html'
+            },
+            publishBook: {
+                //this pushes to the master subtree and publishes out to the gh-pages branch
+                command: 'git subtree push --prefix dist origin gh-pages'
             }
         },
         clean: ['TestBook.epub', 'src/chapters/*.html']
@@ -86,5 +91,9 @@ module.exports = function(grunt) {
     grunt.registerTask(
         'compile',
         ['shell:buildBook', 'pandoc', 'copy', 'clean']
+    );
+    grunt.registerTask(
+        'publish',
+        ['shell:publishBook']
     );
 };
