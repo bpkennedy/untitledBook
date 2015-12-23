@@ -10,6 +10,23 @@ module.exports = function(grunt) {
     depDir = 'node_modules';
 
     grunt.initConfig({
+        connect: {
+          all: {
+            options:{
+              port: 9000,
+              hostname: "0.0.0.0",
+              // Prevents Grunt to close just after the task (starting the server) completes
+              // This will be removed later as `watch` will take care of that
+              keepalive: true
+            }
+          }
+        },
+        open: {
+          all: {
+            // Gets the port from the connect configuration
+            path: 'http://localhost:<%= connect.all.options.port%>/dist'
+          }
+        },
         copy: {
             'src': {
                 files: [
@@ -78,5 +95,9 @@ module.exports = function(grunt) {
     grunt.registerTask(
         'publish',
         ['shell:publishBook']
+    );
+    grunt.registerTask(
+        'serve',
+        ['open', 'connect']
     );
 };
