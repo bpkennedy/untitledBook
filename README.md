@@ -45,6 +45,12 @@ First, let's build our project which will produce the distribution that we want 
 grunt compile
 ```
 
+We'll take one last look before we commit our code by serving it to a local webserver:
+
+```
+grunt serve
+```
+
 Now, let's save all our changes up to our github source code repo:
 
 ```
