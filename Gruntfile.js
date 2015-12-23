@@ -48,8 +48,8 @@ module.exports = function(grunt) {
             },
             'reqs': {
                 files: [
-                    { src:"node_modules/angular-moment/angular-moment.min.js", dest:"components/angular-moment.min.js" },
-                    { src:"node_modules/moment/min/moment.min.js", dest:"components/moment.min.js" }
+                    { src:"node_modules/angular-moment/angular-moment.min.js", dest:"dist/components/angular-moment.min.js" },
+                    { src:"node_modules/moment/min/moment.min.js", dest:"dist/components/moment.min.js" }
                 ]
             }
         },
