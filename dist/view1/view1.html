@@ -1,0 +1,12 @@
+<div id="leetbook">
+  <ng-include src="'book.html'"></ng-include>
+</div>
+<div class="githubCommits">
+  <div class="ghHeader">Recent Updates</div>
+  <ul>
+    <li ng-repeat="commit in gitData | limitTo: 20">
+      <div class="message">{{commit.commit.message}}</div>
+      <div class="date">{{commit.commit.author.date | amCalendar }}</div>
+    </li>
+  </ul>
+</div>

@@ -3,4 +3,6 @@
 ## stupid macs
 .DS_Store
 /node_modules/
-/dist/
+
+## we don't want to ignore dist because that is how gh-pages gets updated with changes
+##/dist/
