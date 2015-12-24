@@ -59,10 +59,14 @@ git commit -m "some one line summary of your changes you are saving"
 git push origin master
 ```
 
+## Publishing
+
 In that example I am pushing directly to master, but you can (and should) create branches and merge those branches into master.  Lastly, let's run the command to actually publish to our gh-pages branch in the repo:
 ```
 grunt publish
 ```
+
+This is actually running ```git subtree push --prefix dist origin gh-pages```, as described in this [article](https://gist.github.com/cobyism/4730490).  This is also why you see the ```/dist``` folder in the repo and not ignored.
 
 The [book webspace](http://bpkennedy.github.io/untitledBook/) should take a minute or two to update with the new content.
 
